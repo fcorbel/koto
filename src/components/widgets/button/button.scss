@@ -1,0 +1,250 @@
+%button {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0 $unit-3;
+  font-family: inherit;
+  color: inherit;
+  @include typography(base);
+  font-weight: 500;
+  border: 1px solid;
+
+  &:focus {
+    // outline: 1px solid #fff;
+    // outline-offset: -4px;
+    box-shadow: 0 0 0 2px palette_color_bg(green, base);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+:host {
+  display: inline-block;
+  height: $unit-6;
+
+  button {
+    @extend %button;
+  }
+}
+
+////////////////////////
+// Solid buttons
+////////////////////////
+%type-solid {
+}
+
+@mixin color_solid($color) {
+  @include palette_color($color, base);
+  border-color: palette_color_bg($color, base);
+
+  &:hover {
+    background-color: palette_color_bg($color, lighter-2);
+  }
+}
+
+:host(.type-solid) {
+  button {
+    @extend %type-solid;
+  }
+}
+
+:host(.type-solid.color-primary) {
+  button {
+    @include color_solid(primary);
+  }
+}
+
+:host(.type-solid.color-secondary) {
+  button {
+    @include color_solid(secondary);
+  }
+}
+
+:host(.type-solid.color-red) {
+  button {
+    @include color_solid(red);
+  }
+}
+
+:host(.type-solid.color-green) {
+  button {
+    @include color_solid(green);
+  }
+}
+
+:host(.type-solid.color-orange) {
+  button {
+    @include color_solid(orange);
+  }
+}
+
+:host(.type-solid.color-yellow) {
+  button {
+    @include color_solid(yellow);
+  }
+}
+
+////////////////////////
+// Outline buttons
+////////////////////////
+%type-outline {
+  border-width: 1px;
+  border-style: solid;
+
+  &:hover {
+    background-color: palette_color_bg(dark, lighter-1);
+  }
+
+  &:active {
+    background-color: palette_color_bg(dark, lighter-2);
+  }
+}
+
+@mixin color_outline($color) {
+  color: palette_color_bg($color, lighter-1);
+  border-color: palette_color_bg($color, lighter-1);
+}
+
+:host(.type-outline) {
+  button {
+    @extend %type-outline;
+  }
+}
+
+:host(.type-outline.color-primary) {
+  button {
+    @include color_outline(primary);
+  }
+}
+
+:host(.type-outline.color-secondary) {
+  button {
+    @include color_outline(secondary);
+  }
+}
+
+:host(.type-outline.color-red) {
+  button {
+    @include color_outline(red);
+  }
+}
+
+:host(.type-outline.color-green) {
+  button {
+    @include color_outline(green);
+  }
+}
+
+:host(.type-outline.color-orange) {
+  button {
+    @include color_outline(orange);
+  }
+}
+
+:host(.type-outline.color-yellow) {
+  button {
+    @include color_outline(yellow);
+  }
+}
+
+////////////////////////
+// Flat buttons
+////////////////////////
+%type-flat {
+  border-color: transparent;
+
+  &:hover {
+    background-color: palette_color_bg(dark, lighter-1);
+  }
+
+  &:active {
+    background-color: palette_color_bg(dark, lighter-2);
+  }
+}
+
+@mixin color_flat($color) {
+  color: palette_color_bg($color, lighter-1);
+}
+
+:host(.type-flat) {
+  button {
+    @extend %type-flat;
+  }
+}
+
+:host(.type-flat.color-primary) {
+  button {
+    @include color_flat(primary);
+  }
+}
+
+:host(.type-flat.color-secondary) {
+  button {
+    @include color_flat(secondary);
+  }
+}
+
+:host(.type-flat.color-red) {
+  button {
+    @include color_flat(red);
+  }
+}
+
+:host(.type-flat.color-green) {
+  button {
+    @include color_flat(green);
+  }
+}
+
+:host(.type-flat.color-orange) {
+  button {
+    @include color_flat(orange);
+  }
+}
+
+:host(.type-flat.color-yellow) {
+  button {
+    @include color_flat(yellow);
+  }
+}
+
+// button {
+//   @extend %button;
+//   @include palette_color(primary, base);
+//   transition: box-shadow 0.1s linear, top 0.1s linear;
+//   transition: all 0.1s linear;
+//   border-bottom-width: 0px !important;
+//   border-bottom-style: solid;
+//   border-bottom-color: palette_color_bg(primary, darker-2);
+
+//   // .content {
+//   //   position: relative;
+//   //   top: 0px;
+//   // }
+
+//   &:hover {
+//     border-bottom-width: 4px !important;
+//     // box-shadow: inset 0 -4px 0 0 palette_color_bg(primary, darker-2);
+//     background: linear-gradient(
+//       to right,
+//       palette_color_bg(primary, lighter-1),
+//       palette_color_bg(primary, base)
+//     );
+//     // @include palette_color(primary, lighter-1);
+//     // box-shadow: 0 3px 0 0 palette_color_bg(primary, darker-2);
+//     // border-bottom: 3px solid palette_color_bg(primary, darker-2);
+//     // .content {
+//     //   top: -2px;
+//     // }
+//   }
+
+//   // &:active {
+//   //   box-shadow: none;
+//   // }
+// }

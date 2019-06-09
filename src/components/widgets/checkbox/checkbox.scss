@@ -1,0 +1,47 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+}
+
+button {
+  display: block;
+  width: $unit-4;
+  height: $unit-4;
+  padding: 0;
+  @include palette_color(dark, lighter-1);
+  border: 1px solid palette_color_bg(dark, lighter-2);
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    background-color: palette_color_bg(dark, lighter-2);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px palette_color_bg(green, base);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+label {
+  margin-left: $unit-3;
+}
+
+:host(.checked) {
+  button {
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 8px;
+      background-color: transparent;
+      position: absolute;
+      border-left: 4px solid palette_color_bg(primary, base);
+      border-bottom: 4px solid palette_color_bg(primary, base);
+      transform: rotateZ(-45deg) translateY(-5px) translateX(10px);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+:host {
+  display: inline-block;
+  @include typography(smaller-1);
+  padding: 0 $unit-1;
+  padding-top: 3px;
+}
+
+:host(.color-primary) {
+  @include palette_color(primary, base);
+}
+
+:host(.color-secondary) {
+  @include palette_color(secondary, base);
+}
+
+:host(.color-red) {
+  @include palette_color(red, base);
+}
+
+:host(.color-green) {
+  @include palette_color(green, base);
+}
+
+:host(.color-orange) {
+  @include palette_color(orange, base);
+}
+
+:host(.color-yellow) {
+  @include palette_color(yellow, base);
+}

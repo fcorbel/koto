@@ -1,0 +1,73 @@
+:host {
+  display: flex;
+  height: 100vh;
+}
+
+.title-1 {
+  @extend %title-1;
+}
+
+.title-2 {
+  @extend %title-2;
+}
+
+.todo-list-types {
+  width: 260px;
+  @include palette_color(dark, darker-1);
+  position: relative;
+  padding: $unit-5 0;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(
+      to left,
+      palette_color_bg(dark, darker-2),
+      transparent
+    );
+  }
+
+  > koto-list-item {
+    @include typography(bigger-2);
+    padding: $unit-2 $unit-4;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid palette_color_bg(dark, lighter-1);
+    }
+
+    &:hover {
+      background-color: palette_color_bg(dark, lighter-1);
+    }
+
+    > koto-badge {
+      margin-left: auto;
+    }
+  }
+}
+
+.todo-list-content {
+  @include palette_color(dark, base);
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: $unit-4;
+}
+
+.todo-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $unit-4;
+  row-gap: $unit-4;
+}
+
+.toto-list {
+  > koto-list-item {
+    margin-bottom: $unit-4;
+  }
+}

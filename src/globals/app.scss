@@ -1,0 +1,65 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+@import "./typography";
+
+@include define_font_face();
+
+body {
+  margin: 0px;
+  padding: 0px;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+  font-family: $fontFamily;
+  background-color: teal;
+
+  @include typography(base);
+}
+
+p,
+.paragraph {
+  @include typography(base);
+  margin: 0;
+}
+
+.paragraph-small {
+  @include typography(smaller-1);
+  margin: 0;
+}
+
+h6,
+.title-6 {
+  @extend %title-6;
+}
+
+h5,
+.title-5 {
+  @extend %title-5;
+}
+
+h4,
+.title-4 {
+  @extend %title-4;
+}
+
+h3,
+.title-3 {
+  @extend %title-3;
+}
+
+h2,
+.title-2 {
+  @extend %title-2;
+}
+
+h1,
+.title-1 {
+  @extend %title-1;
+}

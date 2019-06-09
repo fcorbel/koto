@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  padding: $unit-2;
+}
+
+@mixin palette_viewer($color) {
+  .base {
+    @include palette_color($color, base);
+  }
+  .lighter-1 {
+    @include palette_color($color, lighter-1);
+  }
+  .lighter-2 {
+    @include palette_color($color, lighter-2);
+  }
+  .darker-1 {
+    @include palette_color($color, darker-1);
+  }
+  .darker-2 {
+    @include palette_color($color, darker-2);
+  }
+}
+
+:host(.dark) {
+  @include palette_viewer(dark);
+}
+:host(.green) {
+  @include palette_viewer(green);
+}
+:host(.orange) {
+  @include palette_viewer(orange);
+}
+:host(.yellow) {
+  @include palette_viewer(yellow);
+}
+:host(.red) {
+  @include palette_viewer(red);
+}

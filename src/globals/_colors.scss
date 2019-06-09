@@ -1,0 +1,140 @@
+$palettes: (
+  dark: (
+    base: (
+      #161413,
+      #ffffff
+    ),
+    darker-1: (
+      #0c0b0b,
+      #ffffff
+    ),
+    darker-2: (
+      #000,
+      #ffffff
+    ),
+    lighter-1: (
+      #24201e,
+      #ffffff
+    ),
+    lighter-2: (
+      #322d2b,
+      #ffffff
+    )
+  ),
+  red: (
+    base: (
+      #cc3917,
+      #ffffff
+    ),
+    darker-1: (
+      #b13114,
+      #ffffff
+    ),
+    darker-2: (
+      #8c240c,
+      #ffffff
+    ),
+    lighter-1: (
+      #cc492a,
+      #000000
+    ),
+    lighter-2: (
+      #d16c55,
+      #000000
+    )
+  ),
+  orange: (
+    base: (
+      #f88123,
+      #121212
+    ),
+    darker-1: (
+      #da6e1a,
+      #121212
+    ),
+    darker-2: (
+      #bd5909,
+      #000000
+    ),
+    lighter-1: (
+      #f68c37,
+      #121212
+    ),
+    lighter-2: (
+      #f29e5c,
+      #121212
+    )
+  ),
+  yellow: (
+    base: (
+      #ebd73e,
+      #121212
+    ),
+    darker-1: (
+      #d7c226,
+      #121212
+    ),
+    darker-2: (
+      #bca70b,
+      #121212
+    ),
+    lighter-1: (
+      #f2df50,
+      #121212
+    ),
+    lighter-2: (
+      #f9e972,
+      #121212
+    )
+  ),
+  green: (
+    base: (
+      #4a9186,
+      #121212
+    ),
+    darker-1: (
+      #3a756c,
+      #ffffff
+    ),
+    darker-2: (
+      #1f544c,
+      #ffffff
+    ),
+    lighter-1: (
+      #64ada1,
+      #121212
+    ),
+    lighter-2: (
+      #79c3b8,
+      #121212
+    )
+  )
+);
+
+$primary_color: map-get($palettes, yellow);
+$secondary_color: map-get($palettes, green);
+// $positive_color
+// $negative_color
+
+@function palette_color_bg($color, $tone) {
+  @if $color == "primary" {
+    @return nth(map-get($primary_color, $tone), 1);
+  } @else if $color == "secondary" {
+    @return nth(map-get($secondary_color, $tone), 1);
+  }
+  @return nth(map-get(map-get($palettes, $color), $tone), 1);
+}
+
+@function palette_color_text($color, $tone) {
+  @if $color == "primary" {
+    @return nth(map-get($primary_color, $tone), 2);
+  } @else if $color == "secondary" {
+    @return nth(map-get($secondary_color, $tone), 2);
+  }
+  @return nth(map-get(map-get($palettes, $color), $tone), 2);
+}
+
+@mixin palette_color($color, $tone) {
+  background-color: palette_color_bg($color, $tone);
+  color: palette_color_text($color, $tone);
+}

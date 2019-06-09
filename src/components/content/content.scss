@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  height: 100vh;
+}
+
+nav {
+  @include palette_color("dark", "darker-2");
+  width: 50px;
+}
+
+main {
+  flex: 1 1 auto;
+}

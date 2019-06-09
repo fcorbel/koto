@@ -1,0 +1,22 @@
+:host {
+  display: inline-block;
+  height: $unit-6;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  padding: 0 $unit-2;
+  @include palette_color(dark, lighter-1);
+  border: 1px solid palette_color_bg(dark, lighter-2);
+  // border: 1px solid palette_color_bg(dark, lighter-4);
+  &:hover {
+    background: palette_color_bg(dark, lighter-2);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px palette_color_bg(green, base);
+  }
+}

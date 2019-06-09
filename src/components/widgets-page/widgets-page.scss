@@ -1,0 +1,69 @@
+:host {
+  display: block;
+  @include palette_color("dark", "base");
+  padding: $unit-3 $unit-4;
+}
+
+section {
+  &.typography {
+    max-width: 600px;
+  }
+
+  &.badges {
+    koto-badge {
+      margin-right: $unit-3;
+      margin-bottom: $unit-2;
+    }
+  }
+
+  &.buttons {
+    koto-button {
+      margin-right: $unit-3;
+      margin-bottom: $unit-2;
+    }
+  }
+
+  &.forms {
+    koto-checkbox {
+    }
+  }
+}
+
+.paragraph-small {
+  @extend %paragraph-small;
+}
+
+p,
+.paragraph {
+  @extend %paragraph;
+}
+
+h6,
+.title-6 {
+  @extend %title-6;
+}
+
+h5,
+.title-5 {
+  @extend %title-5;
+}
+
+h4,
+.title-4 {
+  @extend %title-4;
+}
+
+h3,
+.title-3 {
+  @extend %title-3;
+}
+
+h2,
+.title-2 {
+  @extend %title-2;
+}
+
+h1,
+.title-1 {
+  @extend %title-1;
+}
